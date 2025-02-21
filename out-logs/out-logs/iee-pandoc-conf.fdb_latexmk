@@ -1,0 +1,14 @@
+# Fdb version 3
+["pdflatex"] 1740136692 "/home/othelloengineer/coding/sem8/eris/brain/out-logs/iee-pandoc-conf.tex" "out-logs/iee-pandoc-conf.pdf" "iee-pandoc-conf" 1740136692
+  "/etc/texmf/web2c/texmf.cnf" 1739998778 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/othelloengineer/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1739999752 1405655 e120b84e4835808480a53f443497fe21 ""
+  "/home/othelloengineer/coding/sem8/eris/brain/out-logs/iee-pandoc-conf.tex" 1740128725 343 25a75b385acd835cf1f257260aa39221 ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "iee-pandoc-conf.tex" 1740128725 343 25a75b385acd835cf1f257260aa39221 ""
+  "ieeetran.cls" 0 -1 0 ""
+  "out-logs/iee-pandoc-conf.aux" 1740136692 32 3985256e7290058c681f74d7a3565a19 ""
+  "out-logs/ieeetran.cls" 0 -1 0 ""
+  (generated)
+  "out-logs/iee-pandoc-conf.log"
+  "out-logs/iee-pandoc-conf.pdf"

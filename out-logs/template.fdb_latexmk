@@ -1,0 +1,14 @@
+# Fdb version 3
+["pdflatex"] 1740136610 "/home/othelloengineer/coding/sem8/eris/brain/template.tex" "out-logs/template.pdf" "template" 1740136610
+  "$documentclass$.cls" 0 -1 0 ""
+  "/etc/texmf/web2c/texmf.cnf" 1739998778 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/othelloengineer/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1739999752 1405655 e120b84e4835808480a53f443497fe21 ""
+  "/home/othelloengineer/coding/sem8/eris/brain/template.tex" 1740136609 2343 990cfe996d67b0dd7346c14869f1f72a ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
+  "out-logs/$documentclass$.cls" 0 -1 0 ""
+  "out-logs/template.aux" 1740136610 32 3985256e7290058c681f74d7a3565a19 ""
+  "template.tex" 1740136609 2343 990cfe996d67b0dd7346c14869f1f72a ""
+  (generated)
+  "out-logs/template.log"
+  "out-logs/template.pdf"
