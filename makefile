@@ -2,17 +2,17 @@
 BUILDIR:=build
 
 pdf: 
-	pandoc ./$(FILENAME).md \
+	pandoc ./*.md \
 	--citeproc \
 	--from=markdown+tex_math_single_backslash+tex_math_dollars+raw_tex \
 	--to=latex \
 	--template=template.tex \
-	--output=./$(BUILDIR)/$(FILENAME).pdf \
+	--output=./$(BUILDIR)/report.pdf \
 	--pdf-engine=xelatex \
 
 html:
 	mkdir -p build
-	pandoc *.md \
+	pandoc main.md \
 	--citeproc \
 	--from=markdown+tex_math_single_backslash+tex_math_dollars \
 	--to=html5 \

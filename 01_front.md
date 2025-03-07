@@ -38,3 +38,8 @@ f(a)={\frac {1}{2\pi i}}\oint _{\gamma }{\frac {f(z)}{z-a}}\,dz
 $$
 
 look at this cool referece duuude @my_article
+
+| Type of Policy  | Expansionary Policy                                                            | Contractionary Policy  |
+|-----------------|--------------------------------------------------------------------------------|------------------------|
+| Fiscal Policy   | decrease t (increase di, increase C), increase government spending             | opposite               |
+| Monetary Policy | decrease rr, decrease dr, buy securities (increase MS, decrease i, increase I) | opposite               |
