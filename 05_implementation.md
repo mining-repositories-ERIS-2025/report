@@ -18,6 +18,12 @@ Luckly someone on github had made a ranking board that allows you to get the top
 Using the website https://gitstar-ranking.com we could scrape the repo URLs arranged by star count and feed them incrementally into Pydriller.
 
 We did this for the top 10000 repositories on github filtering all repos not made using python. Additionally for each repo we found we limited all commits to the latest 5 years of repos and capped it at 10000 commits per repo.
-This lead to 1.300.000 total commits. 
+This lead to 1.300.000 total commits. This process took 40 compute hours. 
 
 ## Data cleaning
+
+The data cleaning phase is the second part of the pipeline and is for refining the data such that only the data currently needed for processing is used. 
+This mean all commits that dont contain any line changes within the ".py" file. 
+additionally reduntant data in the context of analysing commits is trimmed.  This means that only repositoy, hashId, commit message, deleted and added lines are left.
+The reason for this step existing is because our future pipelines should work with as little data as possible and as such only data directly needed is used.
+However should the scope of our analysis expand, we can change the filtering without running the scraping again.
