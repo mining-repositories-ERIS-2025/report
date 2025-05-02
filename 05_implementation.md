@@ -1,9 +1,5 @@
 # Implementation
-
-- Overview of the implementation steps
-- Highlights constraints of our implementations (e.g we shouldn't scrape too often from github)
-- Share experiences of discovered pitfalls in the implementation
-- Briefly document that our implementation works and where the code/dockerfile can be found and how to execute it
+This section pertains to the implementation of the datapipeline, as mentioned previously, this pipeline starts at stage 1 where conditional scraping was performed on the top 10000 repositories, and as we progress through the stage the amount of data we are working with decreases and the insight from the data increases, where at stage 6 we have a smaller amount of data with higher amount of insight.
 
 ## Stage 1 - Raw data gathering
 The first phase of the data pipeline is the raw data extraction, to perform the raw data extraction a python libary named "Pydriller" was used.
@@ -61,6 +57,7 @@ Delving deeper, the array inside the dictionary contains a bunch of strings, the
         'null-pointer'
     ]
 ``
+
 The above example would classify any commits that contain the substring ' null ' or 'null-pointer' in their message header. and give them the bug label 'null pointer exceptions' if true. This works flawlessly for most bugs, however it limits us to explicitly defining every substring variant individually and as such leads us to filtering out a bunch of commits creating a bunch of false-negatives.  
 So give us more variation and specificity on our substrings, it was also added such that you can use an array inside the array if more specificity is needed.
 
@@ -70,4 +67,19 @@ So give us more variation and specificity on our substrings, it was also added s
         ' edge case '
     ]
 ``
-This above classifies all commits into logical errors if they contain ' indentation ' and ' error ' in their commit message or the substring ' edge case '.
+
+This above classifies all commits into logical errors if they contain ' indentation ' and ' error ' in their commit message or the substring ' edge case '. 
+
+Whilst this format for doesn't provide as much freedom for filtering as a regex would, this implementation is both easier to work with, and more lightweight than a complete regex implementation.
+
+## Stage 5 - Patch categorisation
+
+The second last stage of the pipeline performs another classification on which patch type the code is. This type of classification is independant compared to the bug classification. 
+
+Given that patch classification is a lot harder to do than bug classification, we opted to make use of a rule based classifier. This classifier consists of a bunch of if/elif's statements arranged below each other creating a tier based classifier. 
+This classifer makes use of the tokenisation performed in Stage 3 to make it's classifications making it more advanced than the classifier used in Stage 4. Like in stage 4 we arranged the classifiers such that the most stringent criterias were evaluated first. 
+Using a hard coded rule based classifier like the one has limitations for extendability outside of modifying the code. We decided to use it since the criteris we needed to work with were much more stringent than what a json based classifier like the one made in Stage 4 could deliver.
+
+## Stage 6 - Data aggregation
+
+The last stage doesn't modify and data and merely acts as a data visualisation stage Here we take the insight extracted in Stage 5 and convert it into wisdom related to the overall relation between bug types and patch types. The stage produces a matrix plot with rows being patch types and columns being bug types. 
